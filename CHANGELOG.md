@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 ### Fixed
+- `axi_lite_cdc_src_intf`: Corrected `_i/_o` suffixes in portlist
 
 
 ## 0.29.1 - 2021-06-02
