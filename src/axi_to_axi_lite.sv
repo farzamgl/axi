@@ -45,6 +45,9 @@ module axi_to_axi_lite #(
   localparam int DEPTH_FIFO_RD = 2**$clog2(NUM_PENDING_RD);
   localparam int DEPTH_FIFO_WR = 2**$clog2(NUM_PENDING_WR);
 
+  typedef logic [in.AXI_ID_WIDTH+in.AXI_USER_WIDTH-1:0] meta_rd_t;
+  typedef logic [in.AXI_ID_WIDTH+in.AXI_USER_WIDTH-1:0] meta_wr_t;
+/*
   // The transaction information that will be stored locally.
   typedef struct packed {
     logic [$bits(in.r_id)-1:0] id;
@@ -55,7 +58,7 @@ module axi_to_axi_lite #(
     logic [$bits(in.b_id)-1:0] id;
     logic [$bits(in.b_user)-1:0] user;
   } meta_wr_t;
-
+*/
   // HACK: Rather than passing a meta_rd_t and meta_wr_t into the FIFO's data_o
   //       port, we destructure it into the constituent fields. If we don't do
   //       this, Synopsys DC 2016.03 throws an "Internal Error" on "meta_rd.id".
